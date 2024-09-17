@@ -268,10 +268,10 @@ main{
 }
 .hourlyicon,.hourlytemp,.hourlyrainchance,.hourlycondition,.hourlytime{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     overflow: hidden;
     width: 100%;
+    color: #b076ed;
 }
 .date{
     display: flex;
@@ -288,7 +288,8 @@ main{
     height: 50%;
     width: 100%;
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.750);
+    color: #8c27f8;
+    text-shadow: 0 0 3px rgb(255, 255, 255, 0.5);
 }
 .dailydetails{
     display: flex;
@@ -304,7 +305,8 @@ main{
     align-items: center;
     width: 100%;
     height: 20%;
-    color: rgba(255, 255, 255, 0.750);
+    color: #8c27f8;
+    text-shadow: 0 0 3px rgb(255, 255, 255, 0.5);
 }
 .tomorrowDetails,.datomorrowDetails{
     display: flex;
@@ -312,7 +314,8 @@ main{
     align-items: center;
     width: 100%;
     height: 40%;
-    color: #ecececd5;
+    color: #3d0579;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
 }
 @media (max-width:680px) {
     body{
@@ -594,7 +597,7 @@ main{
         justify-content: space-between;
         align-items: center;
         height: 150px;
-        width: 15%;
+        width: 10%;
     }
     .tomorrow,.datomorrow{
         display: flex;
@@ -602,8 +605,7 @@ main{
         align-items: flex-end;
         height: 50%;
         width: 100%;
-        font-size: 17px;
-        color: rgba(255, 255, 255, 0.750);
+        font-size: 12px;
     }
     .dailydetails{
         display: flex;
@@ -619,14 +621,17 @@ main{
         align-items: center;
         width: 100%;
         height: 20%;
-        color: rgba(255, 255, 255, 0.750);
+        font-size: 10px;
+    }
+    .dailyMaxTemp,.dailyMinTemp,.dailyAvgTemp,.dailyAvgHumidity,.dailyAvgRainChance{
+        width: 30%;
     }
     .tomorrowDetails,.datomorrowDetails{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
+        font-size: 10px;
         height: 40%;
-        color: #ecececd5;
     }
 }
