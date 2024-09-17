@@ -5,7 +5,9 @@
 }
 body{
     background-image: url(assets/bgimage.jpg);
-    background-position-y:900px;
+    background-position-y: 900px;
+    background-color: rgba(81, 144, 145, 0.852);
+    background-blend-mode: screen;
 }
 nav{
     width: 100%;
@@ -226,7 +228,7 @@ main{
     justify-content: center;
     width: 80%;
     gap: 10px;
-    color: rgba(255, 255, 255, 0.650);
+    color: rgb(255, 255, 255);
 }
 .timespan{
     display: flex;
@@ -235,6 +237,8 @@ main{
     width: 100%;
     font-size: 20px;
     margin-top: -70px;
+    color: rgba(255, 255, 255, 0.726);
+    /* color: rgb(82, 25, 168); */
 }
 .hourly,.daily{
     display: flex;
@@ -271,7 +275,9 @@ main{
     align-items: center;
     overflow: hidden;
     width: 100%;
-    color: #b076ed;
+    color: black;
+    /* color: transparent; */
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #0000FF;
 }
 .date{
     display: flex;
