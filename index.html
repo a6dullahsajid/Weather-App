@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="assets/Weather-removebg-preview.png" alt="" />
+      </div>
+      <div class="navContent">
+        <!-- <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Usage Guide</li>
+        </ul> -->
+        <div class="showcityname">Sample Data</div>
+      </div>
+      <div class="searchContainer">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Enter a city name..."
+        />
+        <button id="searchButton" onclick="cityName();">Search</button>
+      </div>
+    </nav>
+    <main>
+      <!-- <div class="line"></div> -->
+      <div class="part1">
+        <div class="left">
+          <div class="card">
+            <div class="cardHead">Temperature Range</div>
+            <div class="line"></div>
+            <div class="leftcardBody">
+              <div class="realFeel">
+                <div class="lefttext">Max Temperature</div>
+                <div class="leftvalue">27°C</div>
+              </div>
+              <div class="line"></div>
+              <div class="wind">
+                <div class="lefttext">Min Temperature</div>
+                <div class="leftvalue">35°C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <div class="card centerCard">
+            <div class="cardHead">Current Weather</div>
+            <div class="line"></div>
+            <div class="cardBody">
+              <div class="cardBodyLeft">
+                <div class="currentTemp">
+                  <div class="icon"></div>
+                  <div class="temp">28°</div>
+                  <div class="degree">C</div>
+                </div>
+                <div class="currentWeather">Cloudy</div>
+              </div>
+              <div class="cardBodyRight">
+                <div class="realFeel">
+                  <div class="text">Real Feel</div>
+                  <div class="value">32°</div>
+                </div>
+                <div class="line"></div>
+                <div class="wind">
+                  <div class="text">Wind Speed</div>
+                  <div class="value">10km/h</div>
+                </div>
+                <div class="line"></div>
+                <div class="humidity">
+                  <div class="text">Humidity</div>
+                  <div class="value">92%</div>
+                </div>
+                <div class="line"></div>
+                <div class="airQuality">
+                  <div class="text">UV Index</div>
+                  <div class="value">19</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="card">
+            <div class="cardHead">Other Info</div>
+            <div class="line"></div>
+            <div class="rightcardBody">
+              <div class="realFeel">
+                <div class="righttext">Sunrise</div>
+                <div class="rightvalue">05:54 AM</div>
+              </div>
+              <div class="line"></div>
+              <div class="wind">
+                <div class="righttext">Sunset</div>
+                <div class="rightvalue">06:15 PM</div>
+              </div>
+              <div class="line"></div>
+              <div class="rain">
+                <div class="righttext">Chance of Rain</div>
+                <div class="rightvalue">30%</div>
+              </div>
+              <div class="line"></div>
+              <div class="time">
+                <div class="righttext">Last Updated</div>
+                <div class="rightvalue">06:20 AM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="part2">
+        <div class="timespan">
+          <div class="hourly" onclick="hourlyData();">Hourly</div>
+          <div class="daily" onclick="dailyData();">Daily</div>
+        </div>
+        <div class="hddata">
+          <!-- <div class="date">
+            <div class="tomorrow">Tomorrow</div>
+            <div class="datomorrow">Day After Tomorrow</div>
+          </div>
+          <div class="dailydetails">
+            <div class="dailyDetailsName">
+              <div class="dailyMaxTemp dailyText">Max Temprature</div>
+              <div class="dailyMinTemp dailyText">Min Temprature</div>
+              <div class="dailyAvgTemp dailyText">Avg. Temperature</div>
+              <div class="dailyAvgHumidity dailyText">Avg. Humidity</div>
+              <div class="dailyRainChance dailyText">Chance of Rain</div>
+            </div>
+            <div class="tomorrowDetails">
+              <div class="dailyValue">38°C</div>
+              <div class="dailyValue">24°C</div>
+              <div class="dailyValue">31°C</div>
+              <div class="dailyValue">72%</div>
+              <div class="dailyValue">65%</div>
+            </div>
+            <div class="datomorrowDetails">
+              <div class="dailyValue">38°C</div>
+              <div class="dailyValue">24°C</div>
+              <div class="dailyValue">31°C</div>
+              <div class="dailyValue">72%</div>
+              <div class="dailyValue">65%</div>
+            </div>
+          </div> -->
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+          <div class="hour">
+            <div class="hourlyicon">
+              <img src="assets/143.webp" alt="">
+            </div>
+            <div class="hourlytemp">
+              Temp:25°C
+            </div>
+            <div class="hourlyrainchance">
+              Rain:50%
+            </div>
+            <div class="hourlycondition">
+              Cloudy
+            </div>
+            <div class="hourlytime">
+              00:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
