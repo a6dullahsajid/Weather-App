@@ -8,6 +8,7 @@ body{
     background-position-y: 900px;
     background-color: rgba(81, 144, 145, 0.852);
     background-blend-mode: screen;
+    /* background-attachment: fixed; */
 }
 nav{
     width: 100%;
@@ -26,6 +27,7 @@ nav{
 .logo img{
     width: 150px;
     height: 90px;
+    filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
 }
 .navContent{
     height: 100%;
@@ -113,6 +115,8 @@ main{
 }
 .card:hover{
     transform: scale(1.01);
+    background-color: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 .centerCard{
     display: flex;
@@ -153,6 +157,7 @@ main{
 .icon img{
     width: 70px;
     height: 70px;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.900));
 }
 .currentTemp{
     display: flex;
@@ -238,7 +243,6 @@ main{
     font-size: 20px;
     margin-top: -70px;
     color: rgba(255, 255, 255, 0.726);
-    /* color: rgb(82, 25, 168); */
 }
 .hourly,.daily{
     display: flex;
@@ -250,6 +254,11 @@ main{
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 1px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 0px #514e4e;
+    transition: all 400ms ease-out;
+}
+.hourly:hover,.daily:hover{
+    text-shadow: 1px 1px 5px black;
 }
 .hour{
     width: 4.15%;
@@ -269,15 +278,15 @@ main{
 }
 .hourlyicon img{
     width: 40px;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.905));
 }
 .hourlyicon,.hourlytemp,.hourlyrainchance,.hourlycondition,.hourlytime{
     display: flex;
     align-items: center;
     overflow: hidden;
     width: 100%;
-    color: black;
-    /* color: transparent; */
-    text-shadow: 0 0 1px #ffffff, 0 0 1px #0000FF;
+    color: #340863;    
+    text-shadow: 0px -1px 0px #00000059;
 }
 .date{
     display: flex;
@@ -294,8 +303,8 @@ main{
     height: 50%;
     width: 100%;
     font-size: 17px;
-    color: #8c27f8;
-    text-shadow: 0 0 3px rgb(255, 255, 255, 0.5);
+    color: #0e39c8;
+    text-shadow: -1px 1px 0px rgb(0 0 0);
 }
 .dailydetails{
     display: flex;
@@ -311,8 +320,8 @@ main{
     align-items: center;
     width: 100%;
     height: 20%;
-    color: #8c27f8;
-    text-shadow: 0 0 3px rgb(255, 255, 255, 0.5);
+    color: #0e39c8;
+    text-shadow: -1px 1px 0px rgb(0 0 0);
 }
 .tomorrowDetails,.datomorrowDetails{
     display: flex;
@@ -320,8 +329,8 @@ main{
     align-items: center;
     width: 100%;
     height: 40%;
-    color: #3d0579;
-    text-shadow: 0 0 3px rgb(255, 255, 255);
+    color: #340863;
+    text-shadow: -1px 1px 0px rgb(208 192 226);
 }
 @media (max-width:680px) {
     body{
@@ -347,6 +356,7 @@ main{
     .logo img{
         width: 75px;
         height: 45px;
+        filter: drop-shadow(0px 0px 0px black);
     }
     .navContent{
         height: 100%;
@@ -563,6 +573,7 @@ main{
         height: 20px;
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.1);
+        text-shadow: 0px 0px 3px #514e4e;
         border-radius: 1px;
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     }
@@ -583,19 +594,21 @@ main{
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        height: 68px;
+        height: 60px;
         width: 25px;
         gap: 2px;
         font-size: 5px;
     }
     .hourlyicon img{
         width: 25px;
+        filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.905));
     }
     .hourlyicon,.hourlytemp,.hourlyrainchance,.hourlycondition,.hourlytime{
         display: flex;
         align-items: center;
         overflow: hidden;
         width: 100%;
+        text-shadow: 0px 0px 0px black;
     }
     .date{
         display: flex;
@@ -612,6 +625,7 @@ main{
         height: 50%;
         width: 100%;
         font-size: 12px;
+        text-shadow: 0px 0px 0px rgb(0 0 0);
     }
     .dailydetails{
         display: flex;
@@ -628,6 +642,7 @@ main{
         width: 100%;
         height: 20%;
         font-size: 10px;
+        text-shadow: 0px 0px 0px rgb(0 0 0);
     }
     .dailyMaxTemp,.dailyMinTemp,.dailyAvgTemp,.dailyAvgHumidity,.dailyAvgRainChance{
         width: 30%;
@@ -639,5 +654,6 @@ main{
         width: 100%;
         font-size: 10px;
         height: 40%;
+        text-shadow: 0px 0px 0px rgb(230, 219, 219);
     }
 }
