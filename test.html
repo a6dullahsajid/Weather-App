@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Input Example</title>
+</head>
+<body>
+  <h1>Voice Input Example</h1>
+  
+  <!-- Textbox to display the recognized speech -->
+  <input type="text" id="voiceInput" placeholder="Speak something..." readonly>
+  
+  <!-- Button to start voice recognition -->
+  <button onclick="startRecognition()">Start Voice Input</button>
+
+  <script>
+    // Check if the browser supports SpeechRecognition
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Sorry, your browser does not support Speech Recognition.");
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false; // Stop automatically after one input
+      recognition.lang = 'en-US'; // Set language to English
+
+      // Function to start speech recognition
+      function startRecognition() {
+        recognition.start();
+      }
+
+      // When speech is recognized, display it in the textbox
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        
+      };
+      // Handle errors
+      recognition.onerror = (event) => {
+        
+      };
+    }
+  </script>
+</body>
+</html>

@@ -14,7 +14,6 @@ function apiFetch() {
         try {
             const response = await fetch(url, options);
             result = await response.json();
-            console.log(result);
             showDetails();
         } catch (error) {
             document.getElementsByClassName("showcityname")[0].innerHTML = `Something went wrong...`;
@@ -31,7 +30,6 @@ function showDetails() {
     let iconLink = result.current.condition.icon;
     document.getElementsByClassName("icon")[0].innerHTML = `<img src=${iconLink} alt="icon">`;
     let currentTemp = result.current.temp_c;
-    console.log(currentTemp);
     document.getElementsByClassName("temp")[0].innerHTML = `${currentTemp}°`;
     let condition = result.current.condition.text;
     document.getElementsByClassName("currentWeather")[0].innerHTML = `${condition}`;
@@ -545,4 +543,24 @@ function dailyData() {
     document.getElementsByClassName("dailyValue")[8].innerHTML = `${datomAvgHumidity}%`;
     let datomRain = result.forecast.forecastday[2].day.daily_chance_of_rain;
     document.getElementsByClassName("dailyValue")[9].innerHTML = `${datomRain}%`;
+}
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (!SpeechRecognition) {
+  alert("Sorry, your browser does not support Speech Recognition.");
+} else {
+  const recognition = new SpeechRecognition();
+  recognition.continuous = false; // Stop automatically after one input
+  recognition.lang = 'en-US'; // Set language to English
+
+  // Function to start speech recognition
+  function startRecognition() {
+    recognition.start();
+  }
+  // When speech is recognized, display it in the textbox and log it
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    document.getElementById("searchInput").value =`${transcript}`;
+    city = document.getElementById("searchInput").value;
+    apiFetch();
+  };
 }
